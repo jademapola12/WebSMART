@@ -169,10 +169,10 @@ foreach ($years_for_chart as $year) {
     $output .= '</tr>';
 }
 
-// Top 10 Most Viewed Section
+// Top 5 Most Viewed Section
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 $output .= '<tr style="background-color:#006400; color:#ced4da;">';
-$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 10 MOST VIEWED</td>';
+$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 5 MOST VIEWED</td>';
 $output .= '</tr>';
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 
@@ -181,7 +181,7 @@ $top_most_viewed_query = $conn->query("SELECT title, SUM(views_count) AS view_co
     WHERE status = '1'
     GROUP BY title
     ORDER BY view_count DESC
-    LIMIT 10
+    LIMIT 5
 ");
 
 // Output Viewed Data Table
@@ -198,10 +198,10 @@ while ($row = $top_most_viewed_query->fetch_assoc()) {
     $output .= '</tr>';
 }
 
-// Top 10 Least Viewed Section
+// Top 5 Least Viewed Section
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
-$output .= '<tr style="background-color:#006400; color:#ced4da;">';
-$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 10 LEAST VIEWED</td>';
+$output .= '<tr style="background-color:#ff8080; color:#ced4da;">';
+$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 5 LEAST VIEWED</td>';
 $output .= '</tr>';
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 
@@ -210,7 +210,7 @@ $top_least_viewed_query = $conn->query("SELECT title, SUM(views_count) AS view_c
     WHERE status = '1'
     GROUP BY title
     ORDER BY view_count ASC
-    LIMIT 10
+    LIMIT 5
 ");
 
 // Output Viewed Data Table
@@ -227,10 +227,10 @@ while ($row = $top_least_viewed_query->fetch_assoc()) {
     $output .= '</tr>';
 }
 
-// Top 10 Most Searched Section
+// Top 5 Most Searched Section
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 $output .= '<tr style="background-color:#006400; color:#ced4da;">';
-$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 10 MOST SEARCHED</td>';
+$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 5 MOST SEARCHED</td>';
 $output .= '</tr>';
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 
@@ -239,7 +239,7 @@ $top_most_searched_query = $conn->query("SELECT title, SUM(search_count) AS sear
     WHERE status = '1'
     GROUP BY title
     ORDER BY search_count DESC
-    LIMIT 10
+    LIMIT 5
 ");
 
 // Output Searched Data Table
@@ -256,10 +256,10 @@ while ($row = $top_most_searched_query->fetch_assoc()) {
     $output .= '</tr>';
 }
 
-// Top 10 Least Searched Section
+// Top 5 Least Searched Section
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
-$output .= '<tr style="background-color:#006400; color:#ced4da;">';
-$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 10 LEAST SEARCHED</td>';
+$output .= '<tr style="background-color:#ff8080; color:#ced4da;">';
+$output .= '<td colspan="10" style="text-align:center; font-weight:bold; color: white;">TOP 5 LEAST SEARCHED</td>';
 $output .= '</tr>';
 $output .= '<tr><td colspan="10" style="border:none;"></td></tr>';
 
@@ -268,7 +268,7 @@ $top_least_searched_query = $conn->query("SELECT title, SUM(search_count) AS sea
     WHERE status = '1'
     GROUP BY title
     ORDER BY search_count ASC
-    LIMIT 10
+    LIMIT 5
 ");
 
 // Output Searched Data Table
