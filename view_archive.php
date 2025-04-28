@@ -1,5 +1,76 @@
+<style>
+    body.blanked {
+        background: white !important;
+        color: black !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        flex-direction: column;
+        transition: all 0.3s ease;
+    }
+    #countdown {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+</style>
+
+<script>
+    console.log("Page ready.");
+
+    // Common blank-and-reload function
+    function triggerBlankAndReload() {
+      console.warn("Screenshot shortcut detected! Blanking the page...");
+      document.body.classList.add('blanked');
+      document.body.innerHTML = `
+        <h1>Cannot take a screenshot!</h1>
+        <div id="countdown">Reloading in 3...</div>
+      `;
+      navigator.clipboard.writeText('').catch(() => {});
+      let seconds = 3;
+      const countdownEl = document.getElementById('countdown');
+      const timer = setInterval(() => {
+        seconds--;
+        countdownEl.textContent = `Reloading in ${seconds}...`;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          location.reload();
+        }
+      }, 1000);
+    }
+
+    // Disable right-click
+    document.addEventListener("contextmenu", e => {
+      e.preventDefault();
+      console.warn("Right-click is disabled!");
+    });
+
+    // Block F12, Ctrl+P, Ctrl+S, Ctrl+Shift+S
+    document.addEventListener("keydown", e => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && (e.key.toLowerCase() === 'p' || e.key.toLowerCase() === 's')) ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's')
+      ) {
+        e.preventDefault();
+        console.warn("That shortcut is disabled!");
+      }
+    });
+
+    // Detect PrintScreen or Shift+S
+    document.addEventListener("keyup", e => {
+      if (e.key === "PrintScreen" ||
+          (e.shiftKey && e.key.toLowerCase() === 's')
+      ) {
+        triggerBlankAndReload();
+      }
+    });
+  </script>
+
 <?php 
-    // Generate CSRF token if not set
+    // Generate CSRF token if not set 
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
