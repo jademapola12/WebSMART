@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2024 at 04:00 PM
+-- Generation Time: Apr 28, 2025 at 09:35 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -34,6 +34,9 @@ CREATE TABLE `archive_list` (
   `title` text NOT NULL,
   `type` int(1) NOT NULL,
   `style` int(1) NOT NULL,
+  `tag` varchar(255) NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `agenda` varchar(255) NOT NULL,
   `abstract` text NOT NULL,
   `members` text NOT NULL,
   `banner_path` text NOT NULL,
@@ -111,14 +114,14 @@ CREATE TABLE `department_list` (
 --
 
 INSERT INTO `department_list` (`id`, `name`, `description`, `status`, `date_created`, `date_updated`) VALUES
-(11, 'College of Arts and Sciences', 'College of Arts and Sciences holds in the ideals of learning by doing, making connections, and creating a community of progress that promotes social awareness and involvement by introducing students to advanced academic pursuits in promoting globally competitive professionals in the field of Psychology and in the programs for liberal arts education in the future.', 1, '2024-08-18 21:34:27', NULL),
-(12, 'College of Business, Accountancy, and Administration', 'Fostering excellence in business education, the College of Business, Accountancy, and Administration (CBAA) empowers its students with administrative competencies in the fields of business, accounting, and administration to enable them to contribute to national development.', 1, '2024-08-18 21:35:27', NULL),
-(13, 'College of Computing Studies', 'The College of Computing Studies (CCS) offers undergraduate programs in the fields of Computer Science, Information Systems, and Information Technology. It aims to produce value-driven and innovative computing professionals equipped with knowledge and skills needed in the IT industry, particularly with specializations in web computing, application development, service management, multimedia, mobile development, game development, data science, and artificial intelligence.', 1, '2024-08-18 21:35:44', NULL),
-(14, 'College of Education', '\r\nTrue to its vision of delivering quality and relevant teacher education, the College of Education (COED) aims to produce knowledge professionals who transform lives and nurture intellectual maturity and moral integrity of the students. Through collaborative engagement which leads to academic success, the college targets to empower future educators through advocacy, linkages, and extension.', 1, '2024-08-18 21:36:06', NULL),
-(15, 'College of Engineering', 'The College of Engineering (COE) envisions itself as a frontrunner of engineering education in the region, producing professionals in the fields of Computer Engineering, Electronics Engineering, and Industrial Engineering. With commitment to community development and nation-building, the College develops competitive and value-laden future engineers specializing in artificial intelligence, production engineering, software development, telecommunication, microelectronics, and power electronics.', 1, '2024-08-18 21:36:28', NULL),
-(16, 'College of Health and Allied Science', 'Equipping students with competence and commitment to preserve humanity as stewards of God’s creation, the College of Health and Allied Sciences (CHAS) aims to produce healthcare professionals in the fields of Nursing and Psychology who can provide effective and efficient health services compliant with global standards.', 1, '2024-08-18 21:36:53', NULL),
-(17, 'Graduate School', 'Graduate studies at Pamantasan ng Cabuyao (University of Cabuyao) give students a deeper understanding of business, science, and education. Curiosity, imaginative play, and a desire to solve problems for the benefit of society are combined with critical thinking. The Graduate School curriculum encourages students to create and apply original theories and concepts that will lead to new ideas and perspectives for the future.', 1, '2024-08-18 21:37:09', NULL),
-(18, 'Senior High School', 'The Pamantasan ng Cabuyao-Senior High School Department (PnC-SHS) prepares its students for higher education and future careers in the industry through effective delivery of instruction, adequate industry immersion experience, and active engagement in research endeavors.\r\n\r\nIts strand offerings follow the recommended curriculum by the Department of Education (DepEd) with additional appropriate subjects to provide students with a strong academic foundation in preparation for the tertiary level.', 1, '2024-08-18 21:37:38', NULL);
+(11, 'COLLEGE OF ARTS AND SCIENCE', 'College of Arts and Sciences holds in the ideals of learning by doing, making connections, and creating a community of progress that promotes social awareness and involvement by introducing students to advanced academic pursuits in promoting globally competitive professionals in the field of Psychology and in the programs for liberal arts education in the future.', 1, '2024-08-18 21:34:27', '2024-12-04 11:24:36'),
+(12, 'COLLEGE OF BUSINESS, ACCOUNTANCY, AND ADMINISTRATION', 'Fostering excellence in business education, the College of Business, Accountancy, and Administration (CBAA) empowers its students with administrative competencies in the fields of business, accounting, and administration to enable them to contribute to national development.', 1, '2024-08-18 21:35:27', '2024-12-04 11:25:14'),
+(13, 'COLLEGE OF COMPUTING STUDIES', 'The College of Computing Studies (CCS) offers undergraduate programs in the fields of Computer Science, Information Systems, and Information Technology. It aims to produce value-driven and innovative computing professionals equipped with knowledge and skills needed in the IT industry, particularly with specializations in web computing, application development, service management, multimedia, mobile development, game development, data science, and artificial intelligence.', 1, '2024-08-18 21:35:44', '2024-12-04 11:25:42'),
+(14, 'COLLEGE OF EDUCATION', 'True to its vision of delivering quality and relevant teacher education, the College of Education (COED) aims to produce knowledge professionals who transform lives and nurture intellectual maturity and moral integrity of the students. Through collaborative engagement which leads to academic success, the college targets to empower future educators through advocacy, linkages, and extension.', 1, '2024-08-18 21:36:06', '2024-12-04 11:27:27'),
+(15, 'COLLEGE OF ENGINEERING', 'The College of Engineering (COE) envisions itself as a frontrunner of engineering education in the region, producing professionals in the fields of Computer Engineering, Electronics Engineering, and Industrial Engineering. With commitment to community development and nation-building, the College develops competitive and value-laden future engineers specializing in artificial intelligence, production engineering, software development, telecommunication, microelectronics, and power electronics.', 1, '2024-08-18 21:36:28', '2024-12-04 11:26:28'),
+(16, 'COLLEGE OF HEALTH AND ALLIED SCIENCE', 'Equipping students with competence and commitment to preserve humanity as stewards of God’s creation, the College of Health and Allied Sciences (CHAS) aims to produce healthcare professionals in the fields of Nursing and Psychology who can provide effective and efficient health services compliant with global standards.', 1, '2024-08-18 21:36:53', '2024-12-04 11:26:41'),
+(17, 'GRADUATE SCHOOL', 'Graduate studies at Pamantasan ng Cabuyao (University of Cabuyao) give students a deeper understanding of business, science, and education. Curiosity, imaginative play, and a desire to solve problems for the benefit of society are combined with critical thinking. The Graduate School curriculum encourages students to create and apply original theories and concepts that will lead to new ideas and perspectives for the future.', 1, '2024-08-18 21:37:09', '2024-12-04 11:27:04'),
+(18, 'SENIOR HIGH SCHOOL', 'The Pamantasan ng Cabuyao-Senior High School Department (PnC-SHS) prepares its students for higher education and future careers in the industry through effective delivery of instruction, adequate industry immersion experience, and active engagement in research endeavors.\r\n\r\nIts strand offerings follow the recommended curriculum by the Department of Education (DepEd) with additional appropriate subjects to provide students with a strong academic foundation in preparation for the tertiary level.', 1, '2024-08-18 21:37:38', '2024-12-04 11:27:16');
 
 -- --------------------------------------------------------
 
@@ -212,8 +215,16 @@ CREATE TABLE `student_list` (
   `avatar` text NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp(),
   `date_updated` datetime DEFAULT NULL ON UPDATE current_timestamp(),
-  `type` int(11) DEFAULT 1
+  `type` int(11) DEFAULT 1,
+  `expiration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_list`
+--
+
+INSERT INTO `student_list` (`id`, `firstname`, `middlename`, `lastname`, `department_id`, `curriculum_id`, `student_id`, `user_type`, `password`, `gender`, `status`, `avatar`, `date_created`, `date_updated`, `type`, `expiration_date`) VALUES
+(1, 'Jade Lester', 'A', 'Mapola', 13, 25, '1903124', 'student', '8827a41122a5028b9808c7bf84b9fcf6', 'Male', 0, '', '2024-11-29 13:45:46', '2025-04-22 13:13:31', 1, '2025-04-12');
 
 -- --------------------------------------------------------
 
@@ -270,7 +281,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `middlename`, `lastname`, `username`, `password`, `avatar`, `last_login`, `type`, `status`, `date_added`, `date_updated`) VALUES
-(1, 'PNC', NULL, 'Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'uploads/admins/admin-1.png?v=1728481960', NULL, 2, 1, '2021-01-20 14:02:37', '2024-10-09 21:52:40');
+(1, 'PNC', NULL, 'MISD', 'PNCMisd', 'c397e5bf6b1c40195a54239786e3e3b4', 'uploads/admins/admin-1.png?v=1744102202', NULL, 2, 1, '2021-01-20 14:02:37', '2025-04-08 16:50:02'),
+(2, 'PNC', NULL, 'VPre', 'IamVPre', 'e10adc3949ba59abbe56e057f20f883e', 'uploads/admins/admin-1.png?v=1728481960', '2025-04-04 04:35:32', 2, 1, '2025-04-04 10:36:37', '2025-04-04 10:58:47'),
+(3, 'PNC', NULL, 'LIBRARIAN', 'IamLibrarian', 'f32436e179abff439d51be39e90783a6', NULL, '2025-04-04 04:59:00', 2, 1, '2025-04-04 10:59:30', '2025-04-04 11:02:09'),
+(18, 'Arcelito', NULL, 'Quiatchon', 'IamProfArcelito', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, 3, 1, '2025-04-04 11:08:01', '2025-04-08 15:42:36'),
+(19, 'Luigi Kim', NULL, 'Flora', 'IamProfKim', '6fad96fb411933d8426fcb7163caf9a4', NULL, NULL, 3, 1, '2025-04-04 11:09:51', NULL),
+(20, 'Ramiro', NULL, 'Dela Cruz', 'IamProfRamiro', '7e2f6c5a695c7cd84432dc5c3c2a9ff3', NULL, NULL, 3, 1, '2025-04-04 11:10:24', NULL);
 
 --
 -- Indexes for dumped tables
@@ -281,6 +297,7 @@ INSERT INTO `users` (`id`, `firstname`, `middlename`, `lastname`, `username`, `p
 --
 ALTER TABLE `archive_list`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`) USING HASH,
   ADD KEY `curriculum_id` (`curriculum_id`),
   ADD KEY `student_id` (`student_id`);
 
@@ -302,6 +319,7 @@ ALTER TABLE `department_list`
 --
 ALTER TABLE `forms_list`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`) USING HASH,
   ADD KEY `student_id` (`student_id`);
 
 --
@@ -333,7 +351,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `archive_list`
 --
 ALTER TABLE `archive_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `curriculum_list`
@@ -357,7 +375,7 @@ ALTER TABLE `forms_list`
 -- AUTO_INCREMENT for table `student_list`
 --
 ALTER TABLE `student_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `system_info`
@@ -369,7 +387,7 @@ ALTER TABLE `system_info`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
