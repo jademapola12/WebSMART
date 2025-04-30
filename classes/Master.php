@@ -232,7 +232,7 @@ Class Master extends DBConnection {
 	
 		} else {
 			$resp['status'] = 'failed'; 
-			$resp['msg'] = "The Title Already Exist!.";
+			$resp['msg'] = "The Title Already Exist .";
 			$resp['err'] = $this->conn->error . "[{$sql}]";
 			error_log("SQL Error: " . $this->conn->error . "[{$sql}]");  // Log SQL error for better debugging
 		}

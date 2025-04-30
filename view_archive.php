@@ -375,21 +375,24 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                     </div>
                 </div>     
                     <br><br>
-                <fieldset>
-                    <legend class="text-navy">Abstract:</legend>
-                    <div class="pl-4 pdf-container">
-                        <div id="abstract_pdf_render"></div>
-                    </div>
-                </fieldset>
+                    <div>
+                    <fieldset style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <legend class="text-navy">Abstract:</legend>
+                            <div class="pl-4 pdf-container" style="height: 1000px;">
+                                <div id="abstract_pdf_render"></div>
+                            </div>
+                        </div>
 
-                <?php if ($_settings->userdata('id') > 0): ?>
-                    <fieldset>
-                        <legend class="text-navy">Project Document:</legend>
-                        <div class="pl-4 pdf-container">
-                            <div id="document_pdf_render"></div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <legend class="text-navy">Project Document:</legend>
+                            <div class="pl-4 pdf-container" style="height: 1000px;">
+                                <div id="document_pdf_render"></div>
+                            </div>
                         </div>
                     </fieldset>
-                <?php endif; ?>
+
+                </div>
             </div>
         </div>
     </div>
